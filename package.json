@@ -10,6 +10,7 @@
     "url": "https://github.com/umami-software/umami.git"
   },
   "scripts": {
+    "install": "GIT_DISCOVERY_ACROSS_FILESYSTEM=1 yarn install",
     "dev": "next dev -p 3000",
     "build": "npm-run-all check-env build-db check-db build-tracker build-geo build-app",
     "start": "next start",
