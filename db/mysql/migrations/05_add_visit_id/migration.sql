@@ -5,7 +5,7 @@ UPDATE `website_event` we
 JOIN (SELECT DISTINCT
         s.session_id,
         s.visit_time,
-        BIN_TO_UUID(RANDOM_BYTES(16) & 0xffffffffffff0fff3fffffffffffffff | 0x00000000000040008000000000000000) uuid
+        UUID() as uuid
     FROM (SELECT DISTINCT session_id,
             DATE_FORMAT(created_at, '%Y-%m-%d %H:00:00') visit_time
         FROM `website_event`) s) a
